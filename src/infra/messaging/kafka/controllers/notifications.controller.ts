@@ -11,10 +11,12 @@ interface SendNotificationPayload {
 @Controller()
 export class NotificationsController {
   constructor(private sendNotification: SendNotification) {}
-  @EventPattern('notifications-send-notifications')
+  //esse decorator é responsavel por ouvir o tópico criado abaixo
+  @EventPattern('notification-send-notification')
   async handleSendNotification(
     @Payload() { content, category, recipientId }: SendNotificationPayload,
   ) {
+    console.log('AQUI', { content, category, recipientId });
     await this.sendNotification.execute({
       content,
       category,

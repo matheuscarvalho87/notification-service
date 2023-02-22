@@ -7,16 +7,17 @@ export class KafkaConsumerService
   implements OnModuleDestroy
 {
   constructor() {
+    //chamar o constructor do ServerKafka
+    //serviço serveless kafka UPSTASH
     super({
       client: {
         clientId: 'notifications',
-        brokers: ['charmed-foxhound-6391-us1-kafka.upstash.io:9092'],
+        brokers: ['bold-sunfish-10627-us1-kafka.upstash.io:9092'],
         sasl: {
           mechanism: 'scram-sha-256',
           username:
-            'Y2hhcm1lZC1mb3hob3VuZC02MzkxJDxHIYsOzHlJgjhkd1MR5IbQcEz_rkWifnY',
-          password:
-            'O8LsT4WtGUcJ-B0fPMpAUkhHl2fP9qupsB_gp9zwMTs4fwm2xXlS1tf8e31HxEYssPlwLg==',
+            'Ym9sZC1zdW5maXNoLTEwNjI3JMgJBaFOr4xAq1lX9MmJGoBLcyU6kJ56rkWFKQY',
+          password: 'a2011aa8e4644d559f5677c0e2ec7be8',
         },
         ssl: true,
       },
